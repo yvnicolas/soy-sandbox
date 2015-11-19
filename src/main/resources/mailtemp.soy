@@ -1,0 +1,708 @@
+{namespace mail.simple}
+
+/**
+ * Says hello to the world.
+ */
+{template .helloWorld}
+  Hello world!
+{/template}
+
+
+/**
+ * Greets a person using "Hello" by default.
+ *  @param name The name of the person.
+ *  @param texte the text in the email.
+ */
+{template .helloName}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"
+	content="text/html"/> <title>Template Test Emailing Mailjet</title>
+	 <style type="text/css">
+
+#outlook a {lb} padding: 0; {rb} .ReadMsgBody {lb} width: 100%; {rb} .ExternalClass
+{lb} width: 100%; {rb} .ExternalClass, .ExternalClass p, .ExternalClass span,
+.ExternalClass font, .ExternalClass td, .ExternalClass div {lb}
+line-height: 100%; {rb} body, table, td, p, a, li, blockquote {lb}
+-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; {rb} table, td
+{lb} mso-table-lspace: 0pt; mso-table-rspace: 0pt; {rb} body {lb} margin: 0;
+padding: 0; {rb} img {lb} border: 0; height: auto; line-height: 100%; outline:
+none; text-decoration: none; -ms-interpolation-mode: bicubic; {rb} table {lb}
+border-collapse: collapse !important; {rb} body, #main, #inner {lb} height:
+100% !important; margin: 0; padding: 0; width: 100% !important; {rb}
+
+.sectionInner {lb} width: 600px; {rb} p, ul, a {lb} font-family: Ubuntu,
+Helvetica, Arial, sans-serif; {rb} a:link, a:visited, a .yshortcuts {lb}
+color: inherit; font-family: inherit; font-weight: inherit;
+text-decoration: none; {rb} .colTool {lb} width: 100%; {rb} @media only screen
+and (max-width: 640px) {lb} body, table, td, p, a, li, blockquote {lb}
+-webkit-text-size-adjust: none !important; {rb} body {lb} width: 100%
+!important; min-width: 100% !important; {rb} body[yahoo] .section {lb}
+max-width: 100% !important; width: 100% !important; {rb} body[yahoo]
+.sectionInner {lb} width: 440px; {rb} body[yahoo] .col, body[yahoo]
+.colToolContainer, body[yahoo] .colTool {lb} display: block !important;
+width: 440px !important; text-align: center !important; padding-left: 0
+!important; padding-right: 0 !important; {rb} body[yahoo] .colToolInner,
+body[yahoo] .toolContent, body[yahoo] .toolContentInner, body[yahoo]
+.toolContent2, body[yahoo] .toolContent2 td, body[yahoo] .toolContent2
+td a {lb} display: block !important; width: 390px !important; text-align:
+center !important; padding-left: 0 !important; padding-right: 0
+!important; {rb} body[yahoo] img {lb} max-width: 390px !important; {rb}
+
+body[yahoo] .full .colToolInner, body[yahoo] .full .toolContent,
+body[yahoo] .full .toolContentInner, body[yahoo] .full .toolContent2,
+body[yahoo] .full .toolContent2 td, body[yahoo] .full .toolContent2 td a
+{lb} width: 440px !important; {rb} body[yahoo] .full img {lb} max-width: 440px
+!important; {rb} body[yahoo] .space {lb} height: 10px; {rb} {rb} @media only screen
+and (max-width: 479px) {lb} body, table, td, p, a, li, blockquote {lb}
+-webkit-text-size-adjust: none !important; {rb} body {lb} width: 100%
+!important; min-width: 100% !important; {rb} body[yahoo] .section {lb}
+max-width: 100% !important; width: 100% !important; {rb} body[yahoo]
+.sectionInner{lb} width: 280px; {rb} body[yahoo] .col, body[yahoo]
+.colToolContainer, body[yahoo] .colTool {lb} display: block !important;
+width: 280px !important; text-align: center !important; padding-left: 0
+!important; padding-right: 0 !important; {rb} body[yahoo] .colToolInner,
+body[yahoo] .toolContent, body[yahoo] .toolContentInner, body[yahoo]
+.toolContent2, body[yahoo] .toolContent2 td, body[yahoo] .toolContent2
+td a {lb} display: block !important; width: 230px !important; text-align:
+center !important; padding-left: 0 !important; padding-right: 0
+!important; {rb} body[yahoo] img {lb} max-width: 230px !important; {rb}
+
+body[yahoo] .full .colToolInner, body[yahoo] .full .toolContent,
+body[yahoo] .full .toolContentInner, body[yahoo] .full .toolContent2,
+body[yahoo] .full .toolContent2 td, body[yahoo] .full .toolContent2 td a
+{lb} width: 280px !important; {rb} body[yahoo] .full img {lb} max-width: 280px
+!important; {rb} body[yahoo] .space {lb} height: 10px; {rb} {rb}
+
+</style>
+<!--[if !mso]><!-->
+<style type="text/css">
+@import
+	url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300);
+</style>
+<link
+	href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300"
+	rel="stylesheet" type="text/css">
+<!--<![endif]-->
+</head>
+<body yahoo="fix" leftmargin="0" marginwidth="0" topmargin="0"
+	marginheight="0" offset="0">
+	<center>
+		<div id="newsletter">
+			<div style="background-color: #d6dde5; font-size: 13px;">
+				<table class="section section-locked" width="100%" cellpadding="0"
+					cellspacing="0"
+					style="font-family: Ubuntu, Helvetica, Arial, sans-serif; border-collapse: collapse; border-spacing: 0px;">
+					<tbody>
+						<tr>
+							<td><table width="600" cellpadding="0" cellspacing="0"
+									class="sectionInner"
+									style="font-family: Ubuntu, Helvetica, Arial, sans-serif; border-collapse: collapse; border-spacing: 0px; background-color: transparent;"
+									align="center" bgcolor="#e5e5e5">
+									<tbody>
+										<tr>
+											<td
+												style="font-family: Ubuntu, Helvetica, Arial, sans-serif; border: 0; border-spacing: 0px; vertical-align: top;"
+												align="center" valign="top"><table cellpadding="0"
+													cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td height="20" style="font-size: 0; line-height: 0;">
+																<!--[if mso]>&nbsp;<![endif]-->
+															</td>
+														</tr>
+														<tr>
+															<td align="center"><table cellpadding="0"
+																	cellspacing="0" class="row">
+																	<tbody>
+																		<tr>
+																			<td width="400" class="col"
+																				style="border: none; border-spacing: 0px; vertical-align: middle;"><table
+																					class="colToolContainer" cellpadding="0"
+																					cellspacing="0" width="400">
+																					<tbody>
+																						<tr>
+																							<td><table class="colTool" cellpadding="0"
+																									cellspacing="0"
+																									style="border-collapse: collapse; border-spacing: 0px;"
+																									align="center">
+																									<tbody>
+																										<tr>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																											<td class="colToolInner"
+																												style="border: 0; border-spacing: 0px; vertical-align: top;"
+																												align="left"><table width="350"
+																													class="toolContent" cellpadding="0"
+																													cellspacing="0"
+																													style="border-collapse: collapse; border-spacing: 0px;">
+																													<tbody>
+																														<tr>
+																															<td class="toolContentInner"
+																																style="border: 0; border-spacing: 0px; vertical-align: top;"
+																																align="left"><div
+																																	style="cursor: auto; font-family: Ubuntu, Helvetica, Arial, sans-serif; line-height: 22px; font-size: 11px; text-decoration: none; font-style: normal; font-weight: normal;"
+																																	class="content">
+																																	<span class="tool-text-font-size"
+																																		style="font-size: 11px">Give a
+																																		summary of your email to your
+																																		recipients</span>
+																																</div></td>
+																														</tr>
+																													</tbody>
+																												</table></td>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																									</tbody>
+																								</table></td>
+																						</tr>
+																					</tbody>
+																				</table></td>
+																			<td width="200" class="col"
+																				style="border: none; border-spacing: 0px; vertical-align: middle;"><table
+																					class="colToolContainer" cellpadding="0"
+																					cellspacing="0" width="200">
+																					<tbody>
+																						<tr>
+																							<td><table class="colTool" cellpadding="0"
+																									cellspacing="0"
+																									style="border-collapse: collapse; border-spacing: 0px;"
+																									align="center">
+																									<tbody>
+																										<tr>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																											<td class="colToolInner"
+																												style="border: 0; border-spacing: 0px; vertical-align: top;"
+																												align="right"><table width="150"
+																													class="toolContent" cellpadding="0"
+																													cellspacing="0"
+																													style="border-collapse: collapse; border-spacing: 0px;">
+																													<tbody>
+																														<tr>
+																															<td class="toolContentInner"
+																																style="border: 0; border-spacing: 0px; vertical-align: top;"
+																																align="right"><div
+																																	style="cursor: auto; font-family: Ubuntu, Helvetica, Arial, sans-serif; line-height: 22px; font-size: 11px; text-decoration: none; font-style: normal; font-weight: normal;"
+																																	class="content" contenteditable="false">
+																																	<span class="tool-text-font-size"
+																																		style="font-size: 11px"><a
+																																		href="[[PERMALINK]]"><span
+																																			class="placeholder-replace-permalink-label">Voir
+																																				la version en ligne</span></a></span>
+																																</div></td>
+																														</tr>
+																													</tbody>
+																												</table></td>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																									</tbody>
+																								</table></td>
+																						</tr>
+																					</tbody>
+																				</table></td>
+																		</tr>
+																	</tbody>
+																</table></td>
+														</tr>
+														<tr>
+															<td height="20" style="font-size: 0; line-height: 0;">
+																<!--[if mso]>&nbsp;<![endif]-->
+															</td>
+														</tr>
+													</tbody>
+												</table></td>
+										</tr>
+									</tbody>
+								</table></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="section" width="100%" cellpadding="0" cellspacing="0"
+					style="font-family: Ubuntu, Helvetica, Arial, sans-serif; border-collapse: collapse; border-spacing: 0px;">
+					<tbody>
+						<tr>
+							<td><table width="600" cellpadding="0" cellspacing="0"
+									class="sectionInner"
+									style="font-family: Ubuntu, Helvetica, Arial, sans-serif; border-collapse: collapse; border-spacing: 0px; background-color: #FFFFFF;"
+									align="center" bgcolor="#FFFFFF">
+									<tbody>
+										<tr>
+											<td
+												style="font-family: Ubuntu, Helvetica, Arial, sans-serif; border: 0; border-spacing: 0px; vertical-align: top; background-image: url(http://mn1y.mj.am/img/mn1y/b/x20vl/x2m7h.jpeg); background-position: top center; background-repeat: repeat;"
+												align="center" valign="top">
+												<!--[if mso]><v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;"><v:fill type="tile" src="http://mn1y.mj.am/img/mn1y/b/x20vl/x2m7h.jpeg" /><v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0"><![endif]-->
+												<table cellpadding="0" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td height="20" style="font-size: 0; line-height: 0;">
+																<!--[if mso]>&nbsp;<![endif]-->
+															</td>
+														</tr>
+														<tr>
+															<td align="center"><table cellpadding="0"
+																	cellspacing="0" class="row">
+																	<tbody>
+																		<tr>
+																			<td width="600" class="col"
+																				style="border: none; border-spacing: 0px; vertical-align: top;"><table
+																					class="colToolContainer" cellpadding="0"
+																					cellspacing="0" width="600">
+																					<tbody>
+																						<tr>
+																							<td><table class="colTool" cellpadding="0"
+																									cellspacing="0"
+																									style="border-collapse: collapse; border-spacing: 0px; background-color: transparent;"
+																									align="center">
+																									<tbody>
+																										<tr>
+																											<td colspan="3" height="25" class="space"
+																												style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; border: 0; border-spacing: 0px; vertical-align: top;">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																										<tr>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																											<td class="colToolInner"
+																												style="border: 0; border-spacing: 0px; vertical-align: top;"
+																												align="center"><table width="550"
+																													class="toolContent" cellpadding="0"
+																													cellspacing="0"
+																													style="border-collapse: collapse; border-spacing: 0px;">
+																													<tbody>
+																														<tr>
+																															<td class="toolContentInner"
+																																style="border: 0; border-spacing: 0px; vertical-align: top;"
+																																align="center"><table
+																																	cellpadding="0" cellspacing="0"
+																																	style="border-collapse: collapse; border-spacing: 0px;"
+																																	align="center">
+																																	<tr>
+																																		<td><img
+																																			src="http://mn1y.mj.am/img/mn1y/b/x20vl/x2m7i.png"
+																																			alt="" width="203"
+																																			style="display: block; border: none; outline: none; text-decoration: none; max-width: 550px;"></td>
+																																	</tr>
+																																</table></td>
+																														</tr>
+																													</tbody>
+																												</table></td>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																										<tr>
+																											<td colspan="3" height="25" class="space"
+																												style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; border: 0; border-spacing: 0px; vertical-align: top;">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																									</tbody>
+																								</table></td>
+																						</tr>
+																					</tbody>
+																				</table></td>
+																		</tr>
+																	</tbody>
+																</table></td>
+														</tr>
+														<tr>
+															<td height="20" style="font-size: 0; line-height: 0;">
+																<!--[if mso]>&nbsp;<![endif]-->
+															</td>
+														</tr>
+													</tbody>
+												</table> <!--[if mso]></v:textbox></v:rect><![endif]-->
+											</td>
+										</tr>
+									</tbody>
+								</table></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="section" width="100%" cellpadding="0" cellspacing="0"
+					style="font-family: Ubuntu, Helvetica, Arial, sans-serif; border-collapse: collapse; border-spacing: 0px;">
+					<tbody>
+						<tr>
+							<td><table width="600" cellpadding="0" cellspacing="0"
+									class="sectionInner"
+									style="font-family: Ubuntu, Helvetica, Arial, sans-serif; border-collapse: collapse; border-spacing: 0px; background-color: #ffffff;"
+									align="center" bgcolor="#ffffff">
+									<tbody>
+										<tr>
+											<td
+												style="font-family: Ubuntu, Helvetica, Arial, sans-serif; border: 0; border-spacing: 0px; vertical-align: top;"
+												align="center" valign="top"><table cellpadding="0"
+													cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td height="35" style="font-size: 0; line-height: 0;">
+																<!--[if mso]>&nbsp;<![endif]-->
+															</td>
+														</tr>
+														<tr>
+															<td align="center"><table cellpadding="0"
+																	cellspacing="0" class="row">
+																	<tbody>
+																		<tr>
+																			<td width="600" class="col"
+																				style="border: none; border-spacing: 0px; vertical-align: middle;"><table
+																					class="colToolContainer" cellpadding="0"
+																					cellspacing="0" width="600">
+																					<tbody>
+																						<tr>
+																							<td><table class="colTool" cellpadding="0"
+																									cellspacing="0"
+																									style="border-collapse: collapse; border-spacing: 0px; background-color: transparent;"
+																									align="center">
+																									<tbody>
+																										<tr>
+																											<td colspan="3" height="10" class="space"
+																												style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; border: 0; border-spacing: 0px; vertical-align: top;">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																										<tr>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																											<td class="colToolInner"
+																												style="border: 0; border-spacing: 0px; vertical-align: top;"
+																												align="left"><table width="550"
+																													class="toolContent" cellpadding="0"
+																													cellspacing="0"
+																													style="border-collapse: collapse; border-spacing: 0px;">
+																													<tbody>
+																														<tr>
+																															<td class="toolContentInner"
+																																style="border: 0; border-spacing: 0px; vertical-align: top;"
+																																align="left"><div
+																																	style="cursor: auto; color: #333333; font-family: Ubuntu, Helvetica, Arial, sans-serif; line-height: 30px; font-size: 13px; text-decoration: none; font-style: normal; font-weight: normal;"
+																																	class="content">
+																																	<p>
+																																		<span class="tool-text-style-title2"
+																																			style="color: rgb(51, 51, 51); font-family: Ubuntu, Helvetica, Arial, sans-serif; font-weight: bold; font-style: normal; display: block; font-size: 20px;"><span
+																																			class="tool-text-color"
+																																			style="color: rgb(75, 185, 241);"><span
+																																				class="tool-text-font-size"
+																																				style="font-size: 30px;"><span
+																																					class="tool-text-font-family"
+																																					style="font-family: 'Trebuchet MS';">Bienvenue
+																																						chez Budget Télécoms</span></span></span></span>
+																																	</p>
+																																</div></td>
+																														</tr>
+																													</tbody>
+																												</table></td>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																										<tr>
+																											<td colspan="3" height="25" class="space"
+																												style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; border: 0; border-spacing: 0px; vertical-align: top;">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																									</tbody>
+																								</table>
+																								<table class="colTool" cellpadding="0"
+																									cellspacing="0"
+																									style="border-collapse: collapse; border-spacing: 0px; background-color: transparent;"
+																									align="center">
+																									<tbody>
+																										<tr>
+																											<td colspan="3" height="10" class="space"
+																												style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; border: 0; border-spacing: 0px; vertical-align: top;">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																										<tr>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																											<td class="colToolInner"
+																												style="border: 0; border-spacing: 0px; vertical-align: top;"
+																												align="left"><table width="550"
+																													class="toolContent" cellpadding="0"
+																													cellspacing="0"
+																													style="border-collapse: collapse; border-spacing: 0px;">
+																													<tbody>
+																														<tr>
+																															<td class="toolContentInner"
+																																style="border: 0; border-spacing: 0px; vertical-align: top;"
+																																align="left"><div
+																																	style="cursor: auto; color: #000000; font-family: Ubuntu, Helvetica, Arial, sans-serif; line-height: 24px; font-size: 13px; text-decoration: none; font-style: normal; font-weight: normal;"
+																																	class="content">
+																																	<div>
+																																		<span class="tool-text-color"
+																																			style="color: rgb(56, 56, 56);"><span
+																																			class="tool-text-font-size"
+																																			style="font-size: 14px;">Bonjour {$name}</span></span>
+																																	</div>
+																																	<div>
+																																		<span class="tool-text-color"
+																																			style="color: rgb(56, 56, 56);"><span
+																																			class="tool-text-font-size"
+																																			style="font-size: 14px;"><br></span></span>
+																																	</div>
+																																	<span class="tool-text-color"
+																																		style="color: rgb(56, 56, 56);"><span
+																																		class="tool-text-font-size"
+																																		style="font-size: 14px;">{$texte}</span></span>
+																																	<div>
+																																		<span class="tool-text-color"
+																																			style="color: rgb(56, 56, 56);"><span
+																																			class="tool-text-font-size"
+																																			style="font-size: 14px;"><br></span></span>
+																																	</div>
+																																	<div>
+																																		<font color="#383838"><span
+																																			style="font-size: 14px;">Cordialement,</span></font>
+																																	</div>
+																																	<div>
+																																		<font color="#383838"><span
+																																			style="font-size: 14px;"><br></span></font>
+																																	</div>
+																																	<div>
+																																		<font color="#383838"><span
+																																			style="font-size: 14px;">L'équipe
+																																				Budget Télécoms</span></font>
+																																	</div>
+																																</div></td>
+																														</tr>
+																													</tbody>
+																												</table></td>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																										<tr>
+																											<td colspan="3" height="10" class="space"
+																												style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; border: 0; border-spacing: 0px; vertical-align: top;">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																									</tbody>
+																								</table>
+																								<table class="colTool" cellpadding="0"
+																									cellspacing="0"
+																									style="border-collapse: collapse; border-spacing: 0px; background-color: transparent;"
+																									align="center">
+																									<tbody>
+																										<tr>
+																											<td colspan="3" height="35" class="space"
+																												style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; border: 0; border-spacing: 0px; vertical-align: top;">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																										<tr>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																											<td class="colToolInner"
+																												style="border: 0; border-spacing: 0px; vertical-align: top;"
+																												align="center"><table width="550"
+																													class="toolContent" cellpadding="0"
+																													cellspacing="0"
+																													style="border-collapse: collapse; border-spacing: 0px;">
+																													<tbody>
+																														<tr>
+																															<td class="toolContentInner"
+																																style="border: 0; border-spacing: 0px; vertical-align: top;"
+																																align="center"><table
+																																	class="toolContent2" cellpadding="0"
+																																	cellspacing="0"
+																																	style="background-color: transparent; border: none; border-radius: 60px;"
+																																	align="center">
+																																	<tr>
+																																		<td
+																																			style="border-radius: 60px; background-color: #4bb9f1;"
+																																			align="center" valign="middle"
+																																			bgcolor="#4bb9f1"><a
+																																			target="_blank"
+																																			style="display: inline-block; text-decoration: none; background-color: #4bb9f1; border: 1px solid #4bb9f1; border-radius: 60px; color: #ffffff; font-size: 13px; font-family: Ubuntu, Helvetica, Arial, sans-serif; font-style: normal; font-weight: normal; padding: 15px 30px;"
+																																			class="content"
+																																			href="https://services.dynamease.net"
+																																			contenteditable="false">Souscrire</a></td>
+																																	</tr>
+																																</table></td>
+																														</tr>
+																													</tbody>
+																												</table></td>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																										<tr>
+																											<td colspan="3" height="35" class="space"
+																												style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; border: 0; border-spacing: 0px; vertical-align: top;">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																									</tbody>
+																								</table></td>
+																						</tr>
+																					</tbody>
+																				</table></td>
+																		</tr>
+																	</tbody>
+																</table></td>
+														</tr>
+													</tbody>
+												</table></td>
+										</tr>
+									</tbody>
+								</table></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="section section-locked" width="100%" cellpadding="0"
+					cellspacing="0"
+					style="font-family: Ubuntu, Helvetica, Arial, sans-serif; border-collapse: collapse; border-spacing: 0px;">
+					<tbody>
+						<tr>
+							<td><table width="600" cellpadding="0" cellspacing="0"
+									class="sectionInner"
+									style="font-family: Ubuntu, Helvetica, Arial, sans-serif; border-collapse: collapse; border-spacing: 0px; background-color: transparent;"
+									align="center" bgcolor="#ffffff">
+									<tbody>
+										<tr>
+											<td
+												style="font-family: Ubuntu, Helvetica, Arial, sans-serif; border: 0; border-spacing: 0px; vertical-align: top;"
+												align="center" valign="top"><table cellpadding="0"
+													cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td height="20" style="font-size: 0; line-height: 0;">
+																<!--[if mso]>&nbsp;<![endif]-->
+															</td>
+														</tr>
+														<tr>
+															<td align="center"><table cellpadding="0"
+																	cellspacing="0" class="row">
+																	<tbody>
+																		<tr>
+																			<td width="600" class="col"
+																				style="border: none; border-spacing: 0px; vertical-align: middle;"><table
+																					class="colToolContainer" cellpadding="0"
+																					cellspacing="0" width="600">
+																					<tbody>
+																						<tr>
+																							<td><table class="colTool" cellpadding="0"
+																									cellspacing="0"
+																									style="border-collapse: collapse; border-spacing: 0px;"
+																									align="center">
+																									<tbody>
+																										<tr>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																											<td class="colToolInner"
+																												style="border: 0; border-spacing: 0px; vertical-align: top;"
+																												align="center"><table width="550"
+																													class="toolContent" cellpadding="0"
+																													cellspacing="0"
+																													style="border-collapse: collapse; border-spacing: 0px;">
+																													<tbody>
+																														<tr>
+																															<td class="toolContentInner"
+																																style="border: 0; border-spacing: 0px; vertical-align: top;"
+																																align="center"><div
+																																	style="cursor: auto; font-family: Ubuntu, Helvetica, Arial, sans-serif; line-height: 22px; font-size: 11px; text-decoration: none; font-style: normal; font-weight: normal;"
+																																	class="content" contenteditable="false">
+																																	<p style="font-size: 11px">
+																																		<span
+																																			class="placeholder-replace-delivery-info">Cet
+																																			email a été envoyé à [[EMAIL_TO]], <a
+																																			href="[[UNSUB_LINK_EN]]"><span
+																																				class="placeholder-replace-unsub-label">cliquez
+																																					ici pour vous désabonner</span></a>.
+																																		</span>
+																																	</p>
+																																</div></td>
+																														</tr>
+																													</tbody>
+																												</table></td>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																									</tbody>
+																								</table>
+																								<table class="colTool" cellpadding="0"
+																									cellspacing="0"
+																									style="border-collapse: collapse; border-spacing: 0px;"
+																									align="center">
+																									<tbody>
+																										<tr>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																											<td class="colToolInner"
+																												style="border: 0; border-spacing: 0px; vertical-align: top;"
+																												align="center"><table width="550"
+																													class="toolContent" cellpadding="0"
+																													cellspacing="0"
+																													style="border-collapse: collapse; border-spacing: 0px;">
+																													<tbody>
+																														<tr>
+																															<td class="toolContentInner"
+																																style="border: 0; border-spacing: 0px; vertical-align: top;"
+																																align="center"><div
+																																	style="cursor: auto; font-family: Ubuntu, Helvetica, Arial, sans-serif; line-height: 22px; font-size: 11px; text-decoration: none; font-style: normal; font-weight: normal;"
+																																	class="content">
+																																	<p style="font-size: 11px">
+																																		<span
+																																			class="placeholder-replace-postal-address">
+																																			FR</span>
+																																	</p>
+																																</div></td>
+																														</tr>
+																													</tbody>
+																												</table></td>
+																											<td width="25">
+																												<!--[if mso]>&nbsp;<![endif]-->
+																											</td>
+																										</tr>
+																									</tbody>
+																								</table></td>
+																						</tr>
+																					</tbody>
+																				</table></td>
+																		</tr>
+																	</tbody>
+																</table></td>
+														</tr>
+														<tr>
+															<td height="20" style="font-size: 0; line-height: 0;">
+																<!--[if mso]>&nbsp;<![endif]-->
+															</td>
+														</tr>
+													</tbody>
+												</table></td>
+										</tr>
+									</tbody>
+								</table></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</center>
+</body>
+</html>
+
+
+{/template}
+
